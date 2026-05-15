@@ -1,7 +1,0 @@
-com/ecommerce/EcommerceApplication.class
-com/ecommerce/config/SecurityConfig.class
-com/ecommerce/service/UserDetailsServiceImpl.class
-com/ecommerce/controller/WebController.class
-com/ecommerce/model/AppUser.class
-com/ecommerce/repository/UserRepository.class
-com/ecommerce/component/DataInitializer.class
