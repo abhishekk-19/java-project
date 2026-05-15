@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <header class="header">
+        <h1>Admin Control Panel</h1>
+        <div class="user-info">
+            <span class="welcome-text">Logged in as: <strong th:text="${username}">Admin</strong></span>
+            <form th:action="@{/logout}" method="post" style="margin: 0;">
+                <button type="submit" class="btn btn-danger" style="padding: 0.5rem 1rem;">Sign Out</button>
+            </form>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="hero" style="padding: 2rem; text-align: left;">
+            <h2 style="font-size: 2rem;">Dashboard Overview</h2>
+            <p style="margin: 0; max-width: none;">Manage your store, products, and users from this central location.</p>
+        </div>
+        
+        <div class="admin-grid">
+            <div class="stat-card">
+                <h3>Total Sales</h3>
+                <div class="value">$24,592</div>
+            </div>
+            <div class="stat-card">
+                <h3>Active Users</h3>
+                <div class="value">1,482</div>
+            </div>
+            <div class="stat-card">
+                <h3>Products</h3>
+                <div class="value">458</div>
+            </div>
+            <div class="stat-card">
+                <h3>Pending Orders</h3>
+                <div class="value">23</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
