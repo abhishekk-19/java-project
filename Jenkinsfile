@@ -2,9 +2,14 @@ pipeline {
     agent {
         docker {
             image 'maven:3.9.6-eclipse-temurin-17'
-            // Mount the local Maven repository to speed up subsequent builds
-            args '-v $HOME/.m2:/root/.m2'
+            // Mount the local Maven repository to a path accessible by the jenkins user
+            args '-v $HOME/.m2:/var/maven/.m2'
         }
+    }
+
+    environment {
+        // Tell Maven to use the mounted repository instead of the default ~/.m2
+        MAVEN_OPTS = '-Dmaven.repo.local=/var/maven/.m2'
     }
 
     stages {
